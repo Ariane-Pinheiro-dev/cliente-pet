@@ -1,5 +1,6 @@
 package br.com.petz.cliente_pet.cliente.application.api;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.hibernate.validator.constraints.br.CPF;
@@ -13,5 +14,9 @@ public class ClienteListResponse {
 	private String cpf;
 	private String email;
 	private String celular;
+	
+	public static List<ClienteListResponse> converte(List<ClienteListResponse> clientes) {
+		return null;
+	}
 
 }
