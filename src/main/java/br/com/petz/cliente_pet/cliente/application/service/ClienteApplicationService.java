@@ -18,6 +18,7 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 @RequiredArgsConstructor
 public class ClienteApplicationService implements ClienteService {
+	private static final ClienteDetalhadoResponse ClienteDetalhadoResponse = null;
 	private final ClienteRepository clienteRepository;
 
 	@Override
@@ -41,8 +42,9 @@ public class ClienteApplicationService implements ClienteService {
 	@Override
 	public ClienteDetalhadoResponse buscaClienteAtravesId(UUID idCliente) {
 		log.info("[inicia] ClienteApplicationService - buscaClienteAtravesId]");
+		Cliente cliente = clienteRepository.buscaClienteAtravesId(idCliente);
 		log.info("[finaliza] ClienteApplicationService - buscaClienteAtravesId]");
-		return null;
+		return new ClienteDetalhadoResponse(cliente);
 	}
 
 }
