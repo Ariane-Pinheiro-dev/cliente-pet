@@ -4,11 +4,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-import org.hibernate.validator.constraints.br.CPF;
-
-import br.com.petz.cliente_pet.cliente.application.api.ClienteAlteracaoResquest;
-import br.com.petz.cliente_pet.cliente.application.api.ClienteResquest;
-import br.com.petz.cliente_pet.cliente.domain.Sexo;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
