@@ -34,11 +34,14 @@ public class Pet {
 	@Email
 	@Column(unique = true)
 	private Porte porte;
+	@NotNull
 	@Column(unique = true)
 	private TipoPet tipo;
 	private String microchip;
+	@NotBlank
 	private String raca;
 	@Enumerated(EnumType.STRING)
+	@NotNull
 	private SexoPet sexo;
 	private String pelagemCor;
 	@NotNull
