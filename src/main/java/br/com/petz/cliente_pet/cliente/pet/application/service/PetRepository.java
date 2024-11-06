@@ -1,9 +1,13 @@
 package br.com.petz.cliente_pet.cliente.pet.application.service;
 
+import java.util.List;
+import java.util.UUID;
+
 import br.com.petz.cliente_pet.cliente.pet.domain.Pet;
 
 public interface PetRepository {
 	Pet salvaPet(Pet pet);
+	List<Pet> buscaPetsDoClienteComID(UUID idCliente);
 	
 
 }
