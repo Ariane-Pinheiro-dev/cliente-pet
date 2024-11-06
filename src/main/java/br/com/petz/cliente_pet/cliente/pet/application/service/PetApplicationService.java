@@ -1,10 +1,12 @@
 package br.com.petz.cliente_pet.cliente.pet.application.service;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
 import br.com.petz.cliente_pet.cliente.application.service.ClienteService;
+import br.com.petz.cliente_pet.cliente.pet.application.api.PetClienteListResponse;
 import br.com.petz.cliente_pet.cliente.pet.application.api.PetResponse;
 import br.com.petz.cliente_pet.cliente.pet.application.api.PetResquest;
 import br.com.petz.cliente_pet.cliente.pet.domain.Pet;
@@ -25,6 +27,13 @@ public class PetApplicationService implements PetService {
 		Pet pet = petRepository.salvaPet(new Pet(idCliente, petRequest));
 		log.info("[finish] PetApplicationService - criaPet");
 		return new PetResponse(pet.getIdPet());
+	}
+	@Override
+	public List<PetClienteListResponse> buscaPetsDoClienteComID(UUID idCliente) {
+		log.info("[start] PetApplicationService - buscaPetsDoClienteComID");
+		clienteService.buscaClienteAtravesId(idCliente);
+		log.info("[finish] PetApplicationService - buscaPetsDoClienteComID");
+		return null;
 	}
 
 }
