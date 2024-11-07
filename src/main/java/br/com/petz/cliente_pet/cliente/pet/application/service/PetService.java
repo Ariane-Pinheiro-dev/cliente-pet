@@ -12,7 +12,7 @@ import jakarta.validation.Valid;
 public interface PetService {
 	PetResponse criaPet(UUID idCliente, @Valid PetResquest petRequest);
 	List<PetClienteListResponse> buscaPetsDoClienteComID(UUID idCliente);
-	PetClienteDetalheResponse buscaPetDoClienteComID(UUID idCliente);
 	PetClienteDetalheResponse buscaPetDoClienteComID(UUID idCliente, UUID idPet);
+	void deletaPetDoClienteComID(UUID idCliente, UUID idPet);
 
 }
