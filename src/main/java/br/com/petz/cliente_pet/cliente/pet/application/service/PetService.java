@@ -3,6 +3,7 @@ package br.com.petz.cliente_pet.cliente.pet.application.service;
 import java.util.List;
 import java.util.UUID;
 
+import br.com.petz.cliente_pet.cliente.pet.application.api.PetAlteracaoResquest;
 import br.com.petz.cliente_pet.cliente.pet.application.api.PetClienteDetalheResponse;
 import br.com.petz.cliente_pet.cliente.pet.application.api.PetClienteListResponse;
 import br.com.petz.cliente_pet.cliente.pet.application.api.PetResponse;
@@ -14,5 +15,6 @@ public interface PetService {
 	List<PetClienteListResponse> buscaPetsDoClienteComID(UUID idCliente);
 	PetClienteDetalheResponse buscaPetDoClienteComID(UUID idCliente, UUID idPet);
 	void deletaPetDoClienteComID(UUID idCliente, UUID idPet);
+	void alteraPetDoClienteComID(UUID idCliente, UUID idPet, PetAlteracaoResquest petAlteracaoResquest);
 
 }
