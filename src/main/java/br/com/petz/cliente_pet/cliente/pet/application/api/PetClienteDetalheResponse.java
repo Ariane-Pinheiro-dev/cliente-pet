@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import br.com.petz.cliente_pet.cliente.pet.domain.Pet;
 import br.com.petz.cliente_pet.cliente.pet.domain.Porte;
 import br.com.petz.cliente_pet.cliente.pet.domain.SexoPet;
 import br.com.petz.cliente_pet.cliente.pet.domain.TipoPet;
@@ -23,4 +24,20 @@ public class PetClienteDetalheResponse {
 	private LocalDate dataNascimento;
 	private String rga;
 	private Integer peso;
+	
+	public PetClienteDetalheResponse(Pet pet) {
+		
+		this.idPet = pet.getIdPet();
+		this.idClienteTutor = pet.getIdClienteTutor();
+		this.nomePet = pet.getNomePet();
+		this.porte = pet.getPorte();
+		this.tipo = pet.getTipo();
+		this.microchip = pet.getMicrochip();
+		this.raca = pet.getRaca();
+		this.sexo = pet.getSexo();
+		this.pelagemCor = pet.getPelagemCor();
+		this.dataNascimento = pet.getDataNascimento();
+		this.rga = pet.getRga();
+		this.peso = pet.getPeso();
+	}
 }

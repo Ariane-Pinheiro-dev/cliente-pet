@@ -21,6 +21,7 @@ import lombok.extern.log4j.Log4j2;
 public class PetApplicationService implements PetService {
 	private final ClienteService clienteService;
 	private final PetRepository petRepository;
+	
 	@Override
 	public PetResponse criaPet(UUID idCliente, @Valid PetResquest petRequest) {
 		log.info("[start] PetApplicationService - criaPet");
@@ -38,11 +39,12 @@ public class PetApplicationService implements PetService {
 		return PetClienteListResponse.converte(petsDoCliente);
 	}
 	@Override
-	public PetClienteDetalheResponse buscaPetDoClienteComID(UUID idCliente) {
+	public PetClienteDetalheResponse buscaPetDoClienteComID(UUID idCliente, UUID idPet) {
 		log.info("[start] PetApplicationService - buscaPetDoClienteComID");
+		clienteService.buscaClienteAtravesId(idCliente);
+		Pet pet = petRepository.buscaPetPeloId(idPet);
 		log.info("[finish] PetApplicationService - buscaPetDoClienteComID");
-		
-		return null;
+		return new PetClienteDetalheResponse(pet);
 	}
 
 }
